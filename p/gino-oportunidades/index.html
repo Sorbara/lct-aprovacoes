@@ -74,6 +74,8 @@ button{font:inherit;cursor:pointer}
 .arts img,.arts video{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--soft)}
 .arts video{aspect-ratio:9/16;background:#000}
 .vid{position:relative}
+.vid img{aspect-ratio:9/16;object-fit:cover}
+.vid.aberto img{display:none}
 .play{position:absolute;inset:0;margin:auto;width:88px;height:88px;border:0;border-radius:50%;background:rgba(25,19,21,.74);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.6);transition:transform .15s ease,background .15s ease}
 .play:hover{transform:scale(1.07);background:var(--accent)}
 .play:active{transform:scale(.97)}
@@ -187,7 +189,7 @@ function cur(id){ const s = state[id] || {}; return (s.v && ARTES_V[id] && s.v !
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
 
 function figure(label, src, titulo){ return `<figure><figcaption>${label}</figcaption><img src="${src}" alt="${esc(titulo)}, versão ${label.toLowerCase()}" loading="lazy"></figure>`; }
-function video(src, capa, titulo){ return `<figure><figcaption>Vídeo</figcaption><div class="vid"><video src="${src}" poster="${capa}" controls playsinline preload="metadata" aria-label="${esc(titulo)}"></video><button class="play" type="button" data-play aria-label="Assistir ao vídeo: ${esc(titulo)}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg></button></div><a class="vlink" href="${src}" target="_blank" rel="noopener">Não abriu? Toque aqui para assistir</a></figure>`; }
+function video(src, capa, titulo){ return `<figure><figcaption>Vídeo</figcaption><div class="vid" data-src="${src}"><img src="${capa}" alt="${esc(titulo)}, capa do vídeo" loading="lazy"><button class="play" type="button" data-play aria-label="Assistir ao vídeo: ${esc(titulo)}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg></button></div><a class="vlink" href="${src}" target="_blank" rel="noopener">Não abriu? Toque aqui para assistir</a></figure>`; }
 function note(rotulo, texto){ return texto ? `<div class="note"><b>${rotulo}</b><p>${esc(texto)}</p></div>` : ""; }
 function card(p){
   const s = cur(p.id), st = s.status || "", artes = p.video ? [video(p.video, p.capa, p.titulo), figure("Capa", p.capa, p.titulo)] : [...(p.feed || []).map(u => figure("Feed", u, p.titulo)), ...(p.story || []).map(u => figure("Stories", u, p.titulo))];
@@ -243,17 +245,28 @@ async function decide(id, status, nota){
   catch (e) { if (el) el.textContent = "Salvo neste aparelho"; }
 }
 
-function marcaVideo(v, tocando){ const box = v.closest(".vid"); if (box) box.classList.toggle("tocando", tocando); }
-document.addEventListener("play", e => { if (e.target.tagName !== "VIDEO") return; marcaVideo(e.target, true); document.querySelectorAll("video").forEach(v => { if (v !== e.target) v.pause(); }); }, true);
-document.addEventListener("pause", e => { if (e.target.tagName === "VIDEO" && !e.target.seeking) marcaVideo(e.target, false); }, true);
-document.addEventListener("ended", e => { if (e.target.tagName === "VIDEO") marcaVideo(e.target, false); }, true);
-// Erro de decodificação vem de cache misturado ou falha do navegador: baixa de novo uma vez e volta a tocar.
-document.addEventListener("error", e => { const v = e.target; if (v.tagName !== "VIDEO" || v.dataset.tentou) return;
-  v.dataset.tentou = "1"; marcaVideo(v, false); v.src = v.src + (v.src.includes("?") ? "&" : "?") + "r=" + Date.now(); v.load(); v.play().catch(() => {}); }, true);
+// Um player por vez: vários vídeos carregados esgotam o decodificador do navegador no computador e o play falha.
+function fechaVideo(box){ const v = box.querySelector("video"); if (v) { v.pause(); v.removeAttribute("src"); v.load(); v.remove(); } box.classList.remove("aberto", "tocando"); }
+function criaVideo(box, tentativa){
+  const v = document.createElement("video"), img = box.querySelector("img");
+  v.controls = true; v.playsInline = true; v.poster = img.src; v.setAttribute("aria-label", img.alt);
+  v.src = box.dataset.src + (tentativa ? "&r=" + Date.now() : "");
+  v.addEventListener("play", () => box.classList.add("tocando"));
+  v.addEventListener("pause", () => { if (!v.seeking) box.classList.remove("tocando"); });
+  v.addEventListener("ended", () => fechaVideo(box));
+  v.addEventListener("error", () => { fechaVideo(box); if (!tentativa) abreVideo(box, true); });
+  box.insertBefore(v, img); box.classList.add("aberto");
+  return v;
+}
+function abreVideo(box, tentativa){
+  document.querySelectorAll(".vid").forEach(b => { if (b !== box) fechaVideo(b); });
+  const v = box.querySelector("video") || criaVideo(box, tentativa);
+  v.play().catch(() => {});
+}
 
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-play]");
-  if (b) { const v = b.parentElement.querySelector("video"); v.play().catch(() => window.open(v.currentSrc || v.src, "_blank")); return; }
+  if (b) { abreVideo(b.parentElement); return; }
   const a = e.target.closest("[data-act]");
   if (a) { const id = a.dataset.id;
     if (a.dataset.act === "ajuste") { state = {...state, [id]: {...cur(id), status:"ajuste", v: ARTES_V[id] || ""}}; save(); render(); const t = document.getElementById("n-"+id); if (t) t.focus(); return; }
