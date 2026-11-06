@@ -73,6 +73,13 @@ button{font:inherit;cursor:pointer}
 .arts figure{margin:0}
 .arts img,.arts video{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--soft)}
 .arts video{aspect-ratio:9/16;background:#000}
+.vid{position:relative}
+.play{position:absolute;inset:0;margin:auto;width:88px;height:88px;border:0;border-radius:50%;background:rgba(25,19,21,.74);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.6);transition:transform .15s ease,background .15s ease}
+.play:hover{transform:scale(1.07);background:var(--accent)}
+.play:active{transform:scale(.97)}
+.play svg{width:36px;height:36px;margin-left:6px}
+.vid.tocando .play{display:none}
+.vlink{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--accent)}
 .arts figcaption{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .notes{display:grid;gap:18px;align-content:start}
 .note b{display:block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
@@ -168,7 +175,7 @@ footer{padding:0 0 110px;color:var(--muted);font-size:12px;text-align:center}
 const PLAN_ID = "gino-oportunidades";
 const CLIENTE = "Ginoferty";
 const OPS = [{"id": "o1", "tag": "Conteúdo em alta", "titulo": "Ela achava que era perimenopausa. Era gravidez.", "por_que": "A Revista Crescer destacou a história de uma mulher diagnosticada com perimenopausa aos 34 anos que descobriu estar grávida. É um caso que surpreende e desperta dúvidas reais.", "estrategia": "Aproveitar uma história de interesse geral para aproximar a Ginoferty de mais mulheres e mostrar, com informação de qualidade, que mudanças no ciclo merecem avaliação. Une surpresa, saúde da mulher e fertilidade.", "onde": "Feed e stories, como conteúdo extra. O planejamento do mês continua igual.", "legenda": "Ela achava que era perimenopausa. Era gravidez. 💜\n\nA Revista Crescer contou a história de uma mulher diagnosticada com perimenopausa aos 34 anos que, depois, descobriu que estava grávida.\n\nNa perimenopausa, a fertilidade diminui e o ciclo pode ficar irregular, mas a ovulação ainda pode acontecer. Por isso, a gravidez continua sendo uma possibilidade até a menopausa, que só é confirmada depois de 12 meses seguidos sem menstruar.\n\nNo início, alguns sinais também podem ser confundidos. Se a menstruação atrasar ou o ciclo mudar, não tire conclusões sozinha: a avaliação médica ajuda a entender o que está acontecendo.\n\nCada história é única, e a sua merece um olhar individualizado. ✨\n\nAgende sua avaliação na Ginoferty pelo WhatsApp (45) 99850-1233.\n\n#Ginoferty #Perimenopausa #Fertilidade #SaúdeDaMulher #ReproduçãoHumana", "feed": ["img/50b81159bde953.jpg"], "story": ["img/e96a21bab4afef.jpg"], "card": "6aec853d4f76cd86d7d41701"}, {"id": "gina1", "tag": "Gina · Agente virtual", "titulo": "É possível fazer FIV sem ter as trompas?", "fala": "Sim, inclusive é uma das indicações de FIV que tem melhor chance de sucesso. Na FIV, a fecundação (encontro do óvulo com o espermatozoide) acontece no laboratório de reprodução humana, ao invés de ocorrer nas tubas. E o embrião gerado in vitro é transferido diretamente para o útero, ao invés de se desenvolver nas tubas.", "onde": "Reels da Ginoferty, depois da sua aprovação.", "video": "video/gina-1-fiv-sem-trompas.mp4", "capa": "img/d705c97b35ab40.jpg", "card": "6aedfe90416bb1bba625d47d"}, {"id": "gina2", "tag": "Gina · Agente virtual", "titulo": "Um embrião pode parar de se desenvolver depois de ser congelado?", "fala": "Sim, após o descongelamento, porém não é frequente acontecer. Embora o congelamento seja uma técnica segura, nem todos os embriões sobrevivem ao descongelamento ou continuam se desenvolvendo.", "onde": "Reels da Ginoferty, depois da sua aprovação.", "video": "video/gina-2-embriao-congelado.mp4", "capa": "img/e14799766a48e6.jpg", "card": "6aedfe91c7be2bf158709b18"}, {"id": "gina3", "tag": "Gina · Agente virtual", "titulo": "Uma mulher pode engravidar depois da menopausa?", "fala": "Sim! Com óvulos doados, desde que tenha condições de saúde adequadas e respeite os critérios médicos. Pois menopausa significa que acabou a reserva de óvulos.", "onde": "Reels da Ginoferty, depois da sua aprovação.", "video": "video/gina-3-menopausa.mp4", "capa": "img/061f582bfdf0c1.jpg", "card": "6aedfe91c65f0b0139df6106"}, {"id": "gina4", "tag": "Gina · Agente virtual", "titulo": "O bebê de uma FIV pode ter o DNA de três pessoas?", "fala": "Não! O DNA de um bebê vem de um óvulo, da mãe, e de um espermatozoide, do pai. Mesmo quando há doação de gametas, não existe essa possibilidade.", "onde": "Reels da Ginoferty, depois da sua aprovação.", "video": "video/gina-4-dna-tres-pessoas.mp4", "capa": "img/6c84ea40ebe59a.jpg", "card": "6aedfe9203897e2512294c99"}];       // [{id, titulo, tag, por_que, estrategia, onde, legenda, feed:[...], story:[...]}]
-const ARTES_V = {"o1": "c4960bb1c622", "gina1": "cdca40efdbc4", "gina2": "2e77b9e0dc98", "gina3": "7750116413db", "gina4": "2300f5356a10"};
+const ARTES_V = {"o1": "c4960bb1c622", "gina1": "26e6c9336e60", "gina2": "241cbc2c6f21", "gina3": "7386dc375940", "gina4": "9cb57bc6fc2a"};
 const LABEL = {aprovado:"Aprovada", ajuste:"Ajuste pedido", recusado:"Recusada"};
 const KEY = "plus:" + PLAN_ID;
 let state = {};
@@ -180,7 +187,7 @@ function cur(id){ const s = state[id] || {}; return (s.v && ARTES_V[id] && s.v !
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
 
 function figure(label, src, titulo){ return `<figure><figcaption>${label}</figcaption><img src="${src}" alt="${esc(titulo)}, versão ${label.toLowerCase()}" loading="lazy"></figure>`; }
-function video(src, capa, titulo){ return `<figure><figcaption>Vídeo</figcaption><video src="${src}" poster="${capa}" controls playsinline preload="metadata" aria-label="${esc(titulo)}"></video></figure>`; }
+function video(src, capa, titulo){ return `<figure><figcaption>Vídeo</figcaption><div class="vid"><video src="${src}" poster="${capa}" controls playsinline preload="metadata" aria-label="${esc(titulo)}"></video><button class="play" type="button" data-play aria-label="Assistir ao vídeo: ${esc(titulo)}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg></button></div><a class="vlink" href="${src}" target="_blank" rel="noopener">Não abriu? Toque aqui para assistir</a></figure>`; }
 function note(rotulo, texto){ return texto ? `<div class="note"><b>${rotulo}</b><p>${esc(texto)}</p></div>` : ""; }
 function card(p){
   const s = cur(p.id), st = s.status || "", artes = p.video ? [video(p.video, p.capa, p.titulo), figure("Capa", p.capa, p.titulo)] : [...(p.feed || []).map(u => figure("Feed", u, p.titulo)), ...(p.story || []).map(u => figure("Stories", u, p.titulo))];
@@ -236,7 +243,14 @@ async function decide(id, status, nota){
   catch (e) { if (el) el.textContent = "Salvo neste aparelho"; }
 }
 
+function marcaVideo(v, tocando){ const box = v.closest(".vid"); if (box) box.classList.toggle("tocando", tocando); }
+document.addEventListener("play", e => { if (e.target.tagName !== "VIDEO") return; marcaVideo(e.target, true); document.querySelectorAll("video").forEach(v => { if (v !== e.target) v.pause(); }); }, true);
+document.addEventListener("pause", e => { if (e.target.tagName === "VIDEO" && !e.target.seeking) marcaVideo(e.target, false); }, true);
+document.addEventListener("ended", e => { if (e.target.tagName === "VIDEO") marcaVideo(e.target, false); }, true);
+
 document.addEventListener("click", e => {
+  const b = e.target.closest("[data-play]");
+  if (b) { const v = b.parentElement.querySelector("video"); v.play().catch(() => window.open(v.currentSrc || v.src, "_blank")); return; }
   const a = e.target.closest("[data-act]");
   if (a) { const id = a.dataset.id;
     if (a.dataset.act === "ajuste") { state = {...state, [id]: {...cur(id), status:"ajuste", v: ARTES_V[id] || ""}}; save(); render(); const t = document.getElementById("n-"+id); if (t) t.focus(); return; }
@@ -255,9 +269,11 @@ render();
     renderBar();
     if (!db) return;
     db.collection("artes").onSnapshot(snap => {
-      let changed = false; const next = {...state};
-      snap.docs.forEach(d => { const v = d.data(); if (v && v.status) { next[d.id] = {status:v.status, nota:v.nota || "", at:v.at || "", v:v.v || ""}; changed = true; } });
-      if (changed) { state = next; save(); render(); }
+      const next = {...state};
+      snap.docs.forEach(d => { const v = d.data(); if (v && v.status) next[d.id] = {status:v.status, nota:v.nota || "", at:v.at || "", v:v.v || ""}; });
+      // A leitura repete a cada 30 s: só redesenha se a resposta mudou, senão o vídeo em andamento para.
+      const mudou = Object.keys(next).some(id => { const a = state[id] || {}, b = next[id]; return a.status !== b.status || (a.nota || "") !== b.nota || (a.v || "") !== b.v; });
+      if (mudou) { state = next; save(); render(); }
     });
   } catch (e) {}
 })();
