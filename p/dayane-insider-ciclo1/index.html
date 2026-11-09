@@ -81,7 +81,7 @@ button{font:inherit;cursor:pointer}
   .decide{grid-template-columns:1fr;padding:6px 14px 14px}
   .st-b{padding:14px 14px 4px}.st h3{font-size:20px}
 }
-dialog{border:0;padding:0;background:transparent;max-width:min(92vw,460px)}
+dialog{border:0;padding:0;background:transparent;width:min(92vw,calc(86vh * 9 / 16));max-width:none}
 dialog::backdrop{background:rgba(27,23,16,.86)}
 dialog img{display:block;width:100%;height:auto;max-height:86vh;object-fit:contain}
 dialog button{position:fixed;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:0;background:#FAFBF6;color:#2C2417;font-size:22px}
@@ -118,7 +118,7 @@ footer{padding:0 0 110px;color:var(--muted);text-align:center}
 </main>
 <footer class="wrap mono">Insider · Dayane Antunes</footer>
 
-<dialog id="zoom" aria-label="Story ampliado"><button type="button" data-fecha aria-label="Fechar">×</button><img alt=""></dialog>
+<dialog id="zoom" aria-label="Story ampliado"><button type="button" data-fecha aria-label="Fechar">×</button><img alt="" width="1080" height="1920"></dialog>
 
 <div class="bar" role="status" aria-live="polite">
   <div class="in">
