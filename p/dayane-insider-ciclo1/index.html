@@ -135,7 +135,7 @@ const DIAS = [{"dia": "Segunda", "data": "09/11", "itens": [{"id": "seg-1-convit
 const ARTES_V = {"seg-1-convite": "bc59d25020dc", "seg-2-grupo": "bf30fe4f56ba", "ter-1-pergunta": "93a4c416939a", "ter-2-lembrete": "190782bfe70d", "qua-1-enquete": "c983f5e88822", "qua-2-resultado": "dfdbdb56699c", "qua-3-faltam2": "cceccea1c456", "qui-1-amanha": "26fd68974ca1", "qui-2-mapa": "d70e33d65dab", "qui-3-ultimo": "1659f1016168", "sex-1-hoje": "e44b90568396", "sex-2-1hora": "55582712f75e", "sex-3-comecando": "e6d4e66bc7ae", "sex-4-aovivo": "6dcda424fd65"};
 const ITENS = DIAS.flatMap(d => d.itens);
 const LABEL = {aprovado:"Aprovado", ajuste:"Ajuste pedido", recusado:"Recusado"};
-const KEY = "insider:" + PLAN_ID;
+const KEY = "insider:" + location.pathname;  // pelo endereço: a cópia de teste não mistura respostas com o link real
 let state = {};
 try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
 let db = null, me = null;
