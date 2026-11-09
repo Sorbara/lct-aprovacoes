@@ -1,0 +1,269 @@
+<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><script src="../shim.js"></script><meta name="viewport" content="width=device-width,initial-scale=1"><title>Curso NeuroEmerg · Ciclo 1 · Aprovação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Criativos de venda de curso (anúncio pago, fora do feed). Identidade do NeuroEmerg: petróleo, ciano e imagem médica escura. */
+:root{
+  --paper:#F3F7F8; --surface:#FFFFFF; --soft:#E6EEF0; --line:#D3E0E3; --ink:#0E2A33; --muted:#557079;
+  --petrol:#0B6E82; --cyan:#02D6FE; --night:#021A24; --night-2:#01303D; --night-ink:#F2FBFD; --night-muted:#9CC3CC;
+  --ok:#1F7A4D; --ok-bg:#E2F2E9; --warn:#A8620B; --warn-bg:#FBEEDC; --no:#A23B33; --no-bg:#F7E3E1;
+  --display:"Montserrat","Helvetica Neue",Arial,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace; --body:"Montserrat","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#061B22; --surface:#0B2630; --soft:#10313D; --line:#1D4352; --ink:#E8F6F9; --muted:#93B6BF; --petrol:#3FB8CF;
+  --ok:#6FCB9A; --warn:#E9A957; --no:#E8857C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#061B22; --surface:#0B2630; --soft:#10313D; --line:#1D4352; --ink:#E8F6F9; --muted:#93B6BF; --petrol:#3FB8CF;
+  --ok:#6FCB9A; --warn:#E9A957; --no:#E8857C; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.etq{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--cyan);color:var(--cyan);border-radius:999px;padding:5px 12px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.etq::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+
+.hero{background:radial-gradient(120% 90% at 85% 10%,#0B6E82 0%,var(--night-2) 38%,var(--night) 75%);color:var(--night-ink);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:620px;height:620px;border:1.5px solid rgba(2,214,254,.25);border-radius:50%;pointer-events:none}
+.hero::before{content:"";position:absolute;right:-40px;bottom:-240px;width:620px;height:620px;border:1px solid rgba(2,214,254,.14);border-radius:50%;pointer-events:none}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;position:relative;z-index:1}
+.logo{height:58px;width:auto}
+.top .mono{color:var(--night-muted)}
+.hero-in{padding:48px 0 60px;position:relative;z-index:1;max-width:860px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,7.6vw,88px);line-height:.98;letter-spacing:-.02em;margin:22px 0 0;text-transform:uppercase}
+.hero h1 em{color:var(--cyan);font-style:normal}
+.hero p{margin:22px 0 0;max-width:60ch;color:var(--night-muted);font-size:17px}
+.hero p b{color:var(--night-ink)}
+.fatos{display:flex;flex-wrap:wrap;margin-top:34px;border-top:1px solid rgba(2,214,254,.25)}
+.fatos div{padding:16px 28px 0 0;margin-right:28px}
+.fatos div+div{border-left:1px solid rgba(2,214,254,.25);padding-left:28px}
+.fatos b{display:block;font-weight:800;font-size:24px;color:var(--night-ink)}
+.fatos span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--night-muted)}
+@media (max-width:700px){.fatos div,.fatos div+div{border:0;padding:14px 0 0;margin-right:24px}.logo{height:46px}.top .mono{display:none}}
+
+.grupos{padding:30px 0 150px}
+.grupo{padding:44px 0 8px;scroll-margin-top:12px}
+.grupo+.grupo{border-top:1px solid var(--line);margin-top:34px}
+.g-h{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+.grupo h2{font-weight:800;font-size:clamp(30px,4.6vw,48px);line-height:1;letter-spacing:-.015em;margin:0;text-transform:uppercase}
+.grupo h2 em{color:var(--petrol);font-style:normal}
+.g-h .mono{color:var(--muted)}
+.g-sub{color:var(--muted);margin:0 0 26px;max-width:66ch}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:28px}
+.cr{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s ease,transform .2s ease}
+.cr:hover{box-shadow:0 26px 46px -34px rgba(2,26,36,.6);transform:translateY(-2px)}
+.cr.s-aprovado{border-color:var(--ok)}.cr.s-ajuste{border-color:var(--warn)}.cr.s-recusado{border-color:var(--no)}
+.trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;background:var(--night);scrollbar-width:thin}
+.trilho button{flex:0 0 100%;scroll-snap-align:start;padding:0;border:0;background:none}
+.trilho img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.cont{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:var(--night);color:var(--night-muted);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.cont .pts{display:flex;gap:5px}.cont .pts i{width:6px;height:6px;border-radius:50%;background:rgba(156,195,204,.4)}.cont .pts i.on{background:var(--cyan)}
+.cr-b{padding:18px 18px 6px;flex:1}
+.cr-b .mono{font-size:11px;color:var(--petrol);font-weight:600}
+.cr h3{font-weight:700;font-size:21px;line-height:1.2;margin:6px 0 0}
+.leg{margin:14px 0 0;background:var(--soft);border-radius:10px;padding:12px 14px}
+.leg .mono{display:block;font-size:10px;color:var(--muted);margin-bottom:4px}
+.leg p{margin:0;font-size:14.5px;white-space:pre-wrap}
+.obs{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
+.decide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:12px 18px 18px}
+.status{grid-column:1/-1;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.status.s-aprovado{color:var(--ok)}.status.s-ajuste{color:var(--warn)}.status.s-recusado{color:var(--no)}
+.btn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:10px 4px;font-weight:700;font-size:13px;transition:border-color .15s ease,background .15s ease}
+.btn:hover{border-color:var(--petrol)}
+.btn:active{transform:translateY(1px)}
+.btn.a[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn.j[aria-pressed="true"]{background:var(--warn);border-color:var(--warn);color:#fff}
+.btn.r[aria-pressed="true"]{background:var(--no);border-color:var(--no);color:#fff}
+.adjust{grid-column:1/-1;display:grid;gap:8px;margin-top:6px}
+.adjust label{font-size:13px;font-weight:700}
+.adjust textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);padding:10px 12px;font:inherit;font-size:15px;resize:vertical}
+.adjust .btn{padding:10px 16px}
+.saved{font-size:12px;color:var(--muted)}
+@media (max-width:560px){.grade{grid-template-columns:1fr;gap:20px}.decide{grid-template-columns:1fr}}
+dialog{border:0;padding:0;background:transparent;width:min(92vw,calc(84vh * 4 / 5));max-width:none}
+dialog::backdrop{background:rgba(2,26,36,.9)}
+dialog img{display:block;width:100%;height:auto;max-height:84vh;object-fit:contain}
+dialog .x,dialog .nav{position:fixed;width:48px;height:48px;border-radius:50%;border:0;background:#F2FBFD;color:#021A24;font-size:22px}
+dialog .x{top:14px;right:14px}
+dialog .nav{top:50%;transform:translateY(-50%)}dialog .ant{left:12px}dialog .prx{right:12px}
+dialog .nav[hidden]{display:none}
+.bar{position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.bar .in{max-width:1180px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bar .t{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.prog{flex:1;min-width:120px;height:6px;border-radius:99px;background:var(--soft);overflow:hidden;display:flex}
+.prog i{height:100%}.prog .a{background:var(--ok)}.prog .j{background:var(--warn)}.prog .r{background:var(--no)}
+.wa{display:inline-flex;align-items:center;gap:8px;background:#1F9D55;color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:13px;text-decoration:none}
+footer{padding:0 0 110px;color:var(--muted);text-align:center}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <img class="logo" src="img/97505bba6d795f.png" alt="Dr. Richam Faissal · Neurocirurgião" width="220" height="58">
+      <span class="mono">Curso NeuroEmerg · Criativos de venda · Ciclo 1</span>
+    </div>
+    <div class="hero-in">
+      <span class="etq">Só anúncio · não vai para o feed</span>
+      <h1>Criativos de venda do <em>NeuroEmerg</em></h1>
+      <p>Dr. Richam, estes são os anúncios para <b>vender o curso NeuroEmerg</b>. Eles rodam só como anúncio pago no Instagram e no Facebook, com o botão <b>Saiba mais</b> levando para a página do curso. <b>Não serão postados no seu perfil.</b> Veja cada criativo com a legenda e aprove ou peça ajuste.</p>
+      <div class="fatos"><div><b>10 criativos</b><span>5 anúncios + 5 carrosséis</span></div><div><b>Só anúncio</b><span>Instagram e Facebook</span></div><div><b>100% online</b><span>Curso NeuroEmerg</span></div><div><b>12x R$ 30,81</b><span>Oferta</span></div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="grupos" aria-label="Criativos">
+    <div id="grupos"></div>
+  </section>
+</main>
+<footer class="wrap mono">Curso NeuroEmerg · Criativos de venda · Ciclo 1</footer>
+
+<dialog id="zoom" aria-label="Criativo ampliado">
+  <button class="x" type="button" data-fecha aria-label="Fechar">×</button>
+  <button class="nav ant" type="button" data-nav="-1" aria-label="Slide anterior">‹</button>
+  <button class="nav prx" type="button" data-nav="1" aria-label="Próximo slide">›</button>
+  <img alt="" width="1080" height="1350">
+</dialog>
+
+<div class="bar" role="status" aria-live="polite">
+  <div class="in">
+    <span class="t" id="barText"></span>
+    <div class="prog" aria-hidden="true"><i class="a" id="pa"></i><i class="j" id="pj"></i><i class="r" id="pr"></i></div>
+    <a class="wa" id="wa" href="#" target="_blank" rel="noopener" hidden>Enviar minhas respostas no WhatsApp</a>
+  </div>
+</div>
+
+<script>
+const PLAN_ID = "richam-neuroemerg-ciclo1";
+const TITULO = "Curso NeuroEmerg · Ciclo 1";
+const GRUPOS = [{"nome": "Anúncios de <em>imagem</em>", "sub": "Uma arte cada. Público: estudantes de medicina, recém-formados e plantonistas de PS e UTI.", "itens": [{"id": "f1", "tipo": "Anúncio de imagem · Feed e stories", "titulo": "Você sabe a teoria. Mas trava no plantão?", "legenda": "Decorar a fisiopatologia não é o suficiente quando o paciente grave chega e a decisão é sua. O NeuroEmerg é o treinamento prático que te dá segurança para agir quando cada minuto importa. Acesso imediato, 100% online. 👉 Garanta o seu no link.", "obs": "", "slides": ["img/082f8faf49df00.jpg"]}, {"id": "f2", "tipo": "Anúncio de imagem · Feed e stories", "titulo": "A faculdade te preparou pra prova. E pro pronto-socorro?", "legenda": "A prova você passou. Mas e quando chega o paciente em coma e não tem gabarito? O NeuroEmerg ensina o que a faculdade não ensina: decidir na emergência neurológica de verdade. 👉 Comece hoje, 12x de R$ 30,81.", "obs": "", "slides": ["img/1f4dd80b6f93fb.jpg"]}, {"id": "f3", "tipo": "Anúncio de imagem · Feed e stories", "titulo": "Chega um paciente em coma. Qual é a sua primeira conduta?", "legenda": "Nos primeiros minutos, a sua decisão muda o prognóstico. Aprenda o passo a passo das condutas que salvam, com um neurocirurgião que vive a linha de frente. 👉 Link para garantir seu acesso.", "obs": "", "slides": ["img/8468808ac4b16e.jpg"]}, {"id": "f4", "tipo": "Anúncio de imagem · Feed e stories", "titulo": "Na emergência, cada minuto decide. Você está preparado?", "legenda": "Segurança no plantão não vem de sorte, vem de treino. O NeuroEmerg te prepara para os quadros que mais aparecem: coma, TCE, AVC e trauma raquimedular. 👉 Acesso imediato no link.", "obs": "", "slides": ["img/be2a20143194f5.jpg"]}, {"id": "f5", "tipo": "Anúncio de imagem · Feed e stories", "titulo": "Neurocirurgião não é quem opera. É quem chega antes.", "legenda": "A parte que salva vida acontece antes da cirurgia: no reconhecimento rápido e na primeira decisão. É isso que o NeuroEmerg te entrega. 👉 Garanta sua vaga no link.", "obs": "", "slides": ["img/e2c6b692893295.jpg"]}]}, {"nome": "Anúncios em <em>carrossel</em>", "sub": "Arraste para o lado para ver todos os slides. O último slide de cada um chama para o curso.", "itens": [{"id": "c1", "tipo": "Carrossel · 7 slides", "titulo": "5 situações em que o plantonista trava", "legenda": "A faculdade te deu a teoria. O plantão cobra a prática. Esses são os 5 momentos que mais travam quem está começando, e exatamente o que o NeuroEmerg te ensina a resolver. 👉 Link na bio.", "obs": "", "slides": ["img/10904a64e47a76.jpg", "img/47014d33dbef88.jpg", "img/d5380c048f0681.jpg", "img/a61e5923de2339.jpg", "img/bdc02764e639f7.jpg", "img/f934773a116045.jpg", "img/fc44b1b54ef0b3.jpg"]}, {"id": "c2", "tipo": "Carrossel · 7 slides", "titulo": "Paciente em coma: por onde começar", "legenda": "Decidir diante do paciente em coma é questão de método, não de sorte. No NeuroEmerg você aprende o passo a passo com quem faz isso todo plantão. 👉 Link na bio.", "obs": "", "slides": ["img/bfca756a9e32fe.jpg", "img/dd1ad6d574234e.jpg", "img/800fe3009c1f91.jpg", "img/199baded234ae4.jpg", "img/ce9f448c84d229.jpg", "img/8002a58140fa86.jpg", "img/7c47cb6326a121.jpg"]}, {"id": "c3", "tipo": "Carrossel · 6 slides", "titulo": "O que a faculdade não te ensina", "legenda": "A faculdade te forma. A prática te prepara. O NeuroEmerg é a ponte entre as duas. 👉 Link na bio.", "obs": "", "slides": ["img/fe1ddcc9ffc8c0.jpg", "img/e29eb496ed8ec0.jpg", "img/c4488350870e63.jpg", "img/43a6005aa5cfe1.jpg", "img/1bfb7ebc898778.jpg", "img/a4cbe03725abb9.jpg"]}, {"id": "c4", "tipo": "Carrossel · 6 slides", "titulo": "Os quadros que mais caem no plantão", "legenda": "São os quadros que mais aparecem e os que menos dão tempo para pensar. O NeuroEmerg te treina para cada um deles. 👉 Link na bio.", "obs": "", "slides": ["img/31675bbf0954a8.jpg", "img/7ede1d838984ce.jpg", "img/e20102ce265f8b.jpg", "img/008e3cc9268654.jpg", "img/d1b64f478553be.jpg", "img/ed7e8a0c9760d3.jpg"]}, {"id": "c5", "tipo": "Carrossel · 6 slides", "titulo": "Por que criei o NeuroEmerg", "legenda": "O NeuroEmerg nasceu de uma inquietação: conhecimento sem prática não salva ninguém. Vem comigo mudar isso. 👉 Link na bio. — Dr. Richam Faissal", "obs": "", "slides": ["img/107ad21a08b7ef.jpg", "img/1f3367424640fc.jpg", "img/0c494693868d55.jpg", "img/b8372d3fc14a1c.jpg", "img/4ff3299469f58c.jpg", "img/ea1290037e9b39.jpg"]}]}];   // [{nome, sub, itens:[{id, tipo, titulo, legenda, obs, slides:[...]}]}]
+const ARTES_V = {"f1": "ebfe9dd2b823", "f2": "782232c00ab8", "f3": "8b171a0a78d5", "f4": "e705fb6db900", "f5": "59eb15d796a8", "c1": "5d28278483f4", "c2": "ce92a12c8f64", "c3": "382ba0e44012", "c4": "2e0a04c1044e", "c5": "66afd1b7600b"};
+const ITENS = GRUPOS.flatMap(g => g.itens);
+const POR_ID = Object.fromEntries(ITENS.map(p => [p.id, p]));
+const LABEL = {aprovado:"Aprovado", ajuste:"Ajuste pedido", recusado:"Recusado"};
+const KEY = "curso:" + location.pathname;  // pelo endereço: a cópia de teste não mistura respostas com o link real
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+let db = null, me = null;
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function cur(id){ const s = state[id] || {}; return (s.v && ARTES_V[id] && s.v !== ARTES_V[id]) ? {} : s; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+function card(p){
+  const s = cur(p.id), st = s.status || "", n = p.slides.length;
+  const pts = n > 1 ? `<span class="pts">${p.slides.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("")}</span>` : "";
+  return `<article class="cr ${st ? "s-"+st : ""}" id="a-${p.id}">
+    <div class="trilho" data-trilho="${p.id}">${p.slides.map((src, i) => `<button type="button" data-zoom="${p.id}" data-i="${i}" aria-label="Ampliar ${esc(p.titulo)}, slide ${i+1} de ${n}"><img src="${src}" alt="${esc(p.titulo)} · slide ${i+1}" loading="lazy" width="1080" height="1350"></button>`).join("")}</div>
+    <div class="cont"><span id="c-${p.id}">${n > 1 ? `1 / ${n} · arraste para o lado` : "Imagem única"}</span>${pts}</div>
+    <div class="cr-b"><span class="mono">${esc(p.tipo)}</span><h3>${esc(p.titulo)}</h3>
+      <div class="leg"><span class="mono">Legenda do anúncio</span><p>${esc(p.legenda)}</p></div>
+      ${p.obs ? `<p class="obs">${esc(p.obs)}</p>` : ""}</div>
+    <div class="decide" role="group" aria-label="Sua resposta">
+      <span class="status ${st ? "s-"+st : ""}">${st ? LABEL[st] : "A revisar"}</span>
+      <button class="btn a" type="button" data-act="aprovado" data-id="${p.id}" aria-pressed="${st==="aprovado"}">Aprovar</button>
+      <button class="btn j" type="button" data-act="ajuste" data-id="${p.id}" aria-pressed="${st==="ajuste"}">Pedir ajuste</button>
+      <button class="btn r" type="button" data-act="recusado" data-id="${p.id}" aria-pressed="${st==="recusado"}">Recusar</button>
+      <div class="adjust" ${st==="ajuste" ? "" : "hidden"}>
+        <label for="n-${p.id}">O que você quer mudar? (arte, texto ou legenda)</label>
+        <textarea id="n-${p.id}">${esc(s.nota || "")}</textarea>
+        <div><button class="btn j" type="button" data-note="${p.id}" aria-pressed="true">Salvar ajuste</button> <span class="saved" id="sv-${p.id}"></span></div>
+      </div>
+    </div></article>`;
+}
+function watchRails(){
+  document.querySelectorAll("[data-trilho]").forEach(t => t.addEventListener("scroll", () => {
+    const id = t.dataset.trilho, n = POR_ID[id].slides.length, i = Math.round(t.scrollLeft / t.clientWidth);
+    const c = document.getElementById("c-" + id); if (c && n > 1) c.textContent = `${i+1} / ${n} · arraste para o lado`;
+    t.parentElement.querySelectorAll(".pts i").forEach((el, k) => el.classList.toggle("on", k === i));
+  }, {passive:true}));
+}
+function renderList(){
+  const box = document.getElementById("grupos");
+  const drafts = {}; box.querySelectorAll("textarea").forEach(t => drafts[t.id] = t.value);
+  const pos = {}; box.querySelectorAll("[data-trilho]").forEach(t => pos[t.dataset.trilho] = t.scrollLeft);
+  box.innerHTML = GRUPOS.map((g, i) => `<section class="grupo" aria-labelledby="g-${i}">
+    <div class="g-h"><h2 id="g-${i}">${g.nome}</h2><span class="mono">${g.itens.length} criativos</span></div>
+    ${g.sub ? `<p class="g-sub">${g.sub}</p>` : ""}
+    <div class="grade">${g.itens.map(card).join("")}</div></section>`).join("");
+  Object.entries(drafts).forEach(([k,v]) => { const t = document.getElementById(k); if (t && v) t.value = v; });
+  Object.entries(pos).forEach(([k,v]) => { const t = box.querySelector(`[data-trilho="${k}"]`); if (t) t.scrollLeft = v; });
+  watchRails();
+}
+function summary(){
+  const L = [`${TITULO} · respostas`];
+  const group = (st, title) => { const ps = ITENS.filter(p => cur(p.id).status === st); if (!ps.length) return;
+    L.push("", title); ps.forEach(p => { L.push(`• ${p.tipo} · ${p.titulo}`); if (st === "ajuste" && cur(p.id).nota) L.push(`   Ajuste: ${cur(p.id).nota}`); }); };
+  group("aprovado","✅ Aprovados"); group("ajuste","✏️ Ajustes"); group("recusado","❌ Recusados");
+  return L.join("\n");
+}
+function renderBar(){
+  const n = ITENS.length || 1, c = {aprovado:0, ajuste:0, recusado:0};
+  ITENS.forEach(p => { const s = cur(p.id).status; if (s) c[s]++; });
+  document.getElementById("barText").textContent = `${c.aprovado + c.ajuste + c.recusado} de ${ITENS.length} respondidos`;
+  document.getElementById("pa").style.width = (c.aprovado/n*100) + "%";
+  document.getElementById("pj").style.width = (c.ajuste/n*100) + "%";
+  document.getElementById("pr").style.width = (c.recusado/n*100) + "%";
+  const wa = document.getElementById("wa");
+  wa.hidden = !(c.aprovado + c.ajuste + c.recusado);
+  wa.href = "https://wa.me/?text=" + encodeURIComponent(summary());
+}
+function render(){ renderList(); renderBar(); }
+
+async function decide(id, status, nota){
+  const next = {status, nota: status === "ajuste" ? (nota || "") : "", at: new Date().toISOString(), v: ARTES_V[id] || ""};
+  state = {...state, [id]: next}; save(); render();
+  const el = document.getElementById("sv-" + id);
+  if (!db) { if (el) el.textContent = "Salvo neste aparelho"; return; }
+  try { await db.collection("artes").doc(id).set({...next, by: me || null}); if (el) el.textContent = "Salvo"; }
+  catch (e) { if (el) el.textContent = "Salvo neste aparelho"; }
+}
+
+const zoom = document.getElementById("zoom");
+let zId = null, zI = 0;
+function showZoom(){
+  const p = POR_ID[zId], img = zoom.querySelector("img");
+  img.src = p.slides[zI]; img.alt = `${p.titulo} · slide ${zI+1} de ${p.slides.length}`;
+  zoom.querySelector(".ant").hidden = zI === 0; zoom.querySelector(".prx").hidden = zI >= p.slides.length - 1;
+}
+document.addEventListener("click", e => {
+  const z = e.target.closest("[data-zoom]");
+  if (z) { zId = z.dataset.zoom; zI = +z.dataset.i; showZoom(); zoom.showModal(); return; }
+  const nv = e.target.closest("[data-nav]");
+  if (nv) { zI = Math.max(0, Math.min(POR_ID[zId].slides.length - 1, zI + +nv.dataset.nav)); showZoom(); return; }
+  if (e.target.closest("[data-fecha]") || e.target === zoom) { zoom.close(); return; }
+  const a = e.target.closest("[data-act]");
+  if (a) { const id = a.dataset.id;
+    if (a.dataset.act === "ajuste") { state = {...state, [id]: {...cur(id), status:"ajuste", v: ARTES_V[id] || ""}}; save(); render(); const t = document.getElementById("n-"+id); if (t) t.focus(); return; }
+    decide(id, a.dataset.act); return; }
+  const n = e.target.closest("[data-note]");
+  if (n) { const id = n.dataset.note; decide(id, "ajuste", document.getElementById("n-"+id).value.trim()); }
+});
+document.addEventListener("keydown", e => {
+  if (!zoom.open) return;
+  if (e.key === "ArrowRight" || e.key === "ArrowLeft") { zI = Math.max(0, Math.min(POR_ID[zId].slides.length - 1, zI + (e.key === "ArrowRight" ? 1 : -1))); showZoom(); }
+});
+
+render();
+(async () => {
+  try {
+    if (!window.claude || !window.claude.use) return;
+    const user = await window.claude.use("user");
+    if (user) { try { me = await user.id(); } catch (e) {} }
+    db = await window.claude.use("db");
+    renderBar();
+    if (!db) return;
+    db.collection("artes").onSnapshot(snap => {
+      const next = {...state};
+      snap.docs.forEach(d => { const v = d.data(); if (v && v.status) next[d.id] = {status:v.status, nota:v.nota || "", at:v.at || "", v:v.v || ""}; });
+      const mudou = Object.keys(next).some(id => { const a = state[id] || {}, b = next[id]; return a.status !== b.status || (a.nota || "") !== b.nota || (a.v || "") !== b.v; });
+      if (mudou) { state = next; save(); render(); }
+    });
+  } catch (e) {}
+})();
+</script>
