@@ -1,0 +1,304 @@
+<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><script src="../shim.js"></script><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ana Paula Faller · Artes de Novembro 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Página de aprovação das ARTES (genérica por cliente). Accent da marca da cliente via #A88445. */
+:root{
+  --paper:#FAF8F6; --surface:#FFFFFF; --soft:#F6EEDF; --line:#E8E1DA; --ink:#2A2624; --muted:#6E6660;
+  --accent:#A88445; --ok:#2F7A4F; --ok-bg:#E3F1E8; --warn:#A8620B; --warn-bg:#FBEEDC; --no:#A23B33; --no-bg:#F7E3E1;
+  --display:"Fraunces",Georgia,serif; --body:"Manrope","Helvetica Neue",Arial,sans-serif; --r:18px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#171412; --surface:#211D1A; --soft:#2C2622; --line:#38312C; --ink:#F2ECE6; --muted:#B4AAA1;
+  --ok:#7CC79A; --ok-bg:#1C2D23; --warn:#E9A957; --warn-bg:#33271A; --no:#E8857C; --no-bg:#35201E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#171412; --surface:#211D1A; --soft:#2C2622; --line:#38312C; --ink:#F2ECE6; --muted:#B4AAA1;
+  --ok:#7CC79A; --ok-bg:#1C2D23; --warn:#E9A957; --warn-bg:#33271A; --no:#E8857C; --no-bg:#35201E; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px 120px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.lct{height:74px;width:auto;mix-blend-mode:multiply}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lct{filter:invert(1);mix-blend-mode:screen}}
+:root[data-theme="dark"] .lct{filter:invert(1);mix-blend-mode:screen}
+.who{display:flex;align-items:center;gap:12px;min-width:0}
+.who img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+.who b{display:block;font-size:14px}.who small{color:var(--muted);font-size:12px}
+.hero{padding:52px 0 34px;display:grid;gap:14px}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,9vw,104px);line-height:.95;margin:0;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p{margin:0;max-width:58ch;color:var(--muted);font-size:16px}
+.steps{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.steps span{font-size:13px;font-weight:600;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.steps i{font-style:normal;color:var(--accent);margin-right:6px}
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,4.4vw,40px);margin:0 0 22px}
+.feed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;max-width:430px;margin:0 auto;border-radius:16px;overflow:hidden;background:var(--line)}
+.feed a{display:block;aspect-ratio:4/5;position:relative}
+.feed img{width:100%;height:100%;object-fit:cover;display:block}
+.feed .ph{background:var(--soft);display:grid;place-items:center;font-size:11px;color:var(--muted)}
+.feed .dot{position:absolute;right:6px;top:6px;width:13px;height:13px;border-radius:50%;border:2px solid #fff;background:#cfc7bf}
+.dot.s-aprovado{background:var(--ok)}.dot.s-ajuste{background:var(--warn)}.dot.s-recusado{background:var(--no)}
+.feedcap{text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
+.list{display:grid;gap:28px}
+.post{display:grid;grid-template-columns:minmax(0,430px) minmax(0,1fr);gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;scroll-margin-top:20px}
+@media (max-width:820px){.post{grid-template-columns:1fr;padding:12px;gap:16px}}
+.slider{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:#111}
+.track{display:flex;height:100%;transition:transform .3s ease}
+.track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover}
+.slider.story{aspect-ratio:9/16;max-height:640px;margin:0 auto}.slider.story .track img{object-fit:contain}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#222;font-size:20px;display:grid;place-items:center}
+.nav.pv{left:10px}.nav.nx{right:10px}
+.cnt{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;border-radius:999px;padding:2px 9px}
+.dots{display:flex;justify-content:center;gap:5px;padding:10px 0 0}.dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--accent)}
+.info{display:flex;flex-direction:column;gap:14px;min-width:0}
+.when{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.when b{font-family:var(--display);font-weight:600;font-size:38px;line-height:1}
+.when span{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.fmt{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:3px 10px}
+.info h3{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.2;margin:0}
+.status{align-self:flex-start;font-size:12px;font-weight:700;border-radius:999px;padding:4px 12px;background:var(--soft);color:var(--muted)}
+.status.s-aprovado{background:var(--ok-bg);color:var(--ok)}.status.s-ajuste{background:var(--warn-bg);color:var(--warn)}.status.s-recusado{background:var(--no-bg);color:var(--no)}
+details{border-top:1px solid var(--line);padding-top:12px}
+.legbox{border-top:1px solid var(--line);padding-top:12px}
+.leglbl{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+summary{cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);list-style:none}
+summary::-webkit-details-marker{display:none}
+.cap{white-space:pre-line;font-size:14.5px;margin-top:10px}
+.decide{display:flex;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+.btn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:11px 18px;font-weight:700;font-size:14px;transition:transform .12s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.a[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn.j[aria-pressed="true"]{background:var(--warn);border-color:var(--warn);color:#fff}
+.btn.r[aria-pressed="true"]{background:var(--no);border-color:var(--no);color:#fff}
+.adjust{display:grid;gap:8px;width:100%}
+.adjust label{font-size:13px;font-weight:700}
+.adjust textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);padding:10px 12px;font:inherit;font-size:14px;resize:vertical}
+.saved{font-size:12px;color:var(--muted)}
+.mic{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;border:1.5px dashed var(--accent);border-radius:14px;background:var(--surface);color:var(--ink);font:inherit;font-size:15px;font-weight:700;cursor:pointer;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;transition:background .15s,color .15s,transform .15s}
+.mic svg{width:22px;height:22px;flex:none}
+.mic.on{background:var(--warn);border-color:var(--warn);border-style:solid;color:#fff;transform:scale(.98)}
+.mic.on .lbl::after{content:"";display:inline-block;width:8px;height:8px;margin-left:8px;border-radius:50%;background:#fff;animation:piscar 1s infinite}
+@keyframes piscar{50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){.mic.on .lbl::after{animation:none}}
+.mic-dica{font-size:12px;color:var(--muted);margin:-2px 0 0}
+.vids{margin:0 0 30px;display:grid;gap:14px;background:var(--soft,#F3EADF);border-radius:var(--r);padding:20px}.vids h3{font-size:20px;margin:0}.vlead{margin:0 0 4px;line-height:1.45}.arts-h{font-size:20px;margin:6px 0 16px}.vid{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:var(--r);padding:18px 20px}.vid .when{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;font-size:14px;color:var(--muted)}.vid .when b{color:var(--ink,#222);font-size:16px}.vid h4{margin:6px 0 8px;font-size:17px;line-height:1.3}.vid p{margin:0;line-height:1.45}.vid .tag{display:inline-block;font-weight:700;color:var(--accent);margin-right:6px}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:30px;text-align:center;color:var(--muted)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.bar .in{max-width:1080px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bar .t{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.bar .t.ok{color:var(--ok)}
+.prog{flex:1;min-width:120px;height:8px;border-radius:999px;background:var(--soft);overflow:hidden;display:flex}
+.prog i{height:100%}.prog .a{background:var(--ok)}.prog .j{background:var(--warn)}.prog .r{background:var(--no)}
+.wa{display:inline-flex;align-items:center;gap:8px;background:#1F9D55;color:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:13px;text-decoration:none}
+.bn{display:grid;gap:26px}.bn h3{font-family:var(--display);font-weight:400;font-size:22px;margin:0 0 10px}
+.bn figure{margin:0 0 10px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}.bn img{display:block;width:100%;height:auto}
+.bnote{color:var(--muted);font-size:14px;margin:-10px 0 18px}
+footer{padding:36px 0 10px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+[hidden]{display:none!important}
+@media (max-width:480px){.lct{height:54px}.who small{display:none}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <img class="lct" src="img/f62ab75b589c14.png" alt="London Content Trends" width="140" height="74">
+    <div class="who"><img src="img/4d8ecc1915b908.jpg" alt="" width="46" height="46"><div><b>Ana Paula Faller</b><small>@draanapaulafaller</small></div></div>
+  </header>
+
+  <section class="hero" aria-labelledby="t" style="border-top:0">
+    <div class="eyebrow">Aprovação das artes · Instagram</div>
+    <h1 id="t">Artes de <em>novembro</em></h1>
+    <p>As artes do planejamento que você aprovou estão prontas. Veja como ficam no seu feed e, em cada uma, toque em Aprovar, Pedir ajuste ou Recusar.</p>
+    <div class="steps"><span><i>1</i>Veja a arte (arraste para ver os slides)</span><span><i>2</i>Leia a legenda</span><span><i>3</i>Responda</span></div>
+  </section>
+
+  <section aria-labelledby="f-t">
+    <h2 id="f-t">Como fica o seu feed</h2>
+    <div class="feed" id="feed" aria-label="Prévia do perfil"></div>
+    <p class="feedcap">Toque numa arte para ir até ela.</p>
+  </section>
+
+  <section aria-labelledby="l-t">
+    <h2 id="l-t">Artes para aprovar</h2>
+    <div class="list" id="list"></div>
+  </section>
+
+  
+
+  <footer>London Content Trends</footer>
+</div>
+
+<div class="bar" role="status" aria-live="polite">
+  <div class="in">
+    <span class="t" id="barText"></span>
+    <div class="prog" aria-hidden="true"><i class="a" id="pa"></i><i class="j" id="pj"></i><i class="r" id="pr"></i></div>
+    <a class="wa" id="wa" href="#" target="_blank" rel="noopener" hidden>Enviar minhas respostas no WhatsApp</a>
+  </div>
+</div>
+
+<script>
+const PLAN_ID = "ana-paula-2026-11";
+const CLIENTE = "Ana Paula Faller";
+const MES = "Novembro 2026";
+const POSTS = [{"id": "p1", "dia": 3, "mes": 11, "dow": "Terça", "fmt": "Carrossel", "hora": "17h30", "titulo": "Vai tentar engravidar? 6 cuidados para começar antes do positivo", "legenda": "Você já ouviu falar da consulta pré-concepcional? Pouca gente conhece, e ela faz muita diferença. 🤍\n\nMuitas mulheres só procuram a ginecologista depois do positivo. Mas os meses antes da gestação são uma janela preciosa para cuidar da saúde da mãe e do bebê que ainda vai chegar.\n\nNessa consulta, a gente revisa exames, vacinas, medicamentos de uso contínuo, doenças como as da tireoide e o diabetes, e começa a suplementação certa no momento certo.\n\nMas atenção: planejar não significa transformar a tentativa em pressão. Cada casal tem o seu tempo, e a investigação de fertilidade tem a hora certa para começar.\n\n**Gravidez planejada começa antes do positivo.**\n\nSalve este carrossel e envie para aquela amiga que está pensando em engravidar. 👇\n\n#Fertilidade #Tentantes #PréNatal #SaúdeDaMulher #Ginecologia #CascavelPR #DraAnaPaulaFaller"}, {"id": "p2", "dia": 4, "mes": 11, "dow": "Quarta", "fmt": "Carrossel", "hora": "17h30", "titulo": "Você costuma observar a cor da sua menstruação?", "legenda": "Você já reparou que a cor da menstruação muda ao longo dos dias? 👀\n\nNa maioria das vezes, isso é normal. A cor varia com a quantidade de fluxo e com o tempo que o sangue leva para sair do útero. Por isso ele costuma ser mais vermelho nos dias intensos e mais escuro no começo e no fim.\n\nO que merece atenção:\n– sangramento acinzentado ou com odor forte;\n– coágulos muito grandes ou frequentes;\n– fluxo que obriga a trocar o absorvente a cada hora;\n– sangramento fora do período menstrual.\n\nMas lembre: a cor sozinha não fecha diagnóstico. **O que o seu corpo está te mostrando é a mudança no seu padrão.** E é isso que vale levar para a consulta.\n\nSalve para consultar depois e compartilhe com uma amiga. 🩸\n\n#CicloMenstrual #Menstruação #SaúdeDaMulher #SaúdeÍntima #Ginecologia #DraAnaPaulaFaller"}, {"id": "p3", "dia": 5, "mes": 11, "dow": "Quinta", "fmt": "Feed", "hora": "11h30", "titulo": "Ela na menopausa, ele com a testosterona caindo: o casal muda junto.", "legenda": "Novembro Azul também passa pelo meu consultório. 💙\n\nDepois dos 40, não é só o corpo da mulher que muda. No homem, a testosterona também cai aos poucos, e isso pode trazer cansaço, sono pior, irritação, perda de massa muscular e queda da libido.\n\nQuando os dois atravessam essas mudanças ao mesmo tempo, é comum o casal se desencontrar: um acha que o outro perdeu o interesse, e ninguém fala sobre o assunto.\n\nA boa notícia é que existe cuidado para os dois. Ela, com a ginecologista. Ele, com o urologista, que também cuida da próstata neste Novembro Azul.\n\n**Atravessar essa fase junto começa por conversar sobre ela.**\n\nEnvie este post para ele, com carinho. 👇\n\n#NovembroAzul #Menopausa #SaúdeDoHomem #Climatério #Mulher40Mais #Ginecologia #DraAnaPaulaFaller"}, {"id": "p4", "dia": 6, "mes": 11, "dow": "Sexta", "fmt": "Feed", "hora": "11h30", "titulo": "Ninguém deveria sair de uma consulta sem ter sido ouvida.", "legenda": "Muitas mulheres chegam ao consultório com uma frase parecida: \"Doutora, eu já falei isso antes, mas ninguém deu importância.\"\n\nO cansaço que não passa. O sono que piorou. A libido que sumiu. A menstruação que mudou. Muitas vezes, a resposta que a mulher recebe é \"isso é normal\" ou \"é da idade\".\n\nEu acredito em outra forma de cuidar: com tempo para escutar, com exame quando ele é necessário e com um plano que faça sentido para a sua vida, e não para a de outra pessoa.\n\n**Você não precisa normalizar o que sente.**\n\nSe você já se sentiu assim em alguma consulta, me conta aqui. 🤍\n\n#SaúdeDaMulher #Ginecologia #CuidadoHumanizado #Mulher40Mais #CascavelPR #DraAnaPaulaFaller"}, {"id": "p5", "dia": 10, "mes": 11, "dow": "Terça", "fmt": "Carrossel", "hora": "17h30", "titulo": "Frases que eu escuto no consultório: menopausa", "legenda": "Algumas frases eu escuto quase toda semana no consultório. E cada uma delas merece uma conversa. 🤍\n\nA menopausa ainda é cercada de ideias que fazem a mulher sofrer em silêncio ou adiar o cuidado: achar que ainda não é a hora porque menstrua, ter medo do tratamento, ou parar de ir à ginecologista porque \"já passou\".\n\nNesse carrossel, eu trago as frases mais comuns e o que eu respondo para cada uma.\n\nLembre: cada mulher atravessa essa fase de um jeito, e o tratamento é sempre individual.\n\n**Informação de qualidade é o primeiro passo para viver essa fase com mais leveza.**\n\nQual dessas você já falou ou ouviu? Salve e envie para uma amiga. ✨\n\n#Menopausa #Climatério #SaúdeDaMulher #SaúdeHormonal #Mulher40Mais #Ginecologia #DraAnaPaulaFaller"}, {"id": "p6", "dia": 11, "mes": 11, "dow": "Quarta", "fmt": "Feed", "hora": "11h30", "titulo": "Cisto no ovário: nem todo cisto é perigoso.", "legenda": "Recebeu o resultado do ultrassom com a palavra \"cisto\" e já ficou preocupada? Calma. 🌸\n\nA maioria dos cistos no ovário é funcional: eles se formam por causa da própria ovulação e costumam desaparecer sozinhos em alguns ciclos.\n\nO que a gente avalia:\n– o tamanho e o aspecto no ultrassom;\n– se há sintomas, como dor pélvica ou alteração do ciclo;\n– a idade e a fase de vida da mulher (depois da menopausa, o olhar é diferente).\n\nAlguns cistos pedem acompanhamento com novo exame; poucos precisam de cirurgia. Dor súbita e intensa no pé da barriga é sinal para procurar atendimento na hora.\n\n**Cisto não é diagnóstico de doença. É um achado que precisa ser interpretado.**\n\nSalve este post e compartilhe com uma amiga. 👇\n\n#CistoNoOvário #Ovário #Ultrassom #SaúdeDaMulher #Ginecologia #DraAnaPaulaFaller"}, {"id": "p7", "dia": 12, "mes": 11, "dow": "Quinta", "fmt": "Carrossel", "hora": "17h30", "titulo": "Pólipo endometrial: o que é, como aparece e quando tratar", "legenda": "\"Doutora, apareceu um pólipo no meu ultrassom. É grave?\" 👀\n\nO pólipo endometrial é um crescimento do tecido que reveste o útero por dentro. Na grande maioria das vezes, ele é benigno, mas merece atenção, principalmente depois dos 40.\n\nEle pode causar sangramento fora do período, fluxo mais intenso ou escape depois da relação. Em outras mulheres, não dá sintoma nenhum e aparece no ultrassom de rotina.\n\nA decisão de retirar ou acompanhar é individual: depende dos sintomas, do tamanho, da idade e do desejo de engravidar.\n\n**Sangramento fora do seu padrão nunca deve ser normalizado.**\n\nSalve este carrossel e envie para quem precisa. 👇\n\n#PólipoEndometrial #Útero #Histeroscopia #SaúdeDaMulher #Mulher40Mais #Ginecologia #DraAnaPaulaFaller"}, {"id": "p8", "dia": 14, "mes": 11, "dow": "Sábado", "fmt": "Feed", "hora": "11h30", "titulo": "Cascavel, 75 anos: uma cidade que floresce em todas as estações. Como as mulheres daqui.", "legenda": "Hoje, 14 de novembro, Cascavel completa 75 anos. 💛\n\nTodo ano, os ipês da cidade lembram a gente de uma coisa: cada estação tem a sua beleza. Tem tempo de raiz, tempo de broto e tempo de flor.\n\nCom as mulheres é igual. A menina da primeira consulta, a mulher que planeja ser mãe, a que atravessa a menopausa. Cada fase tem o seu cuidado, e nenhuma delas precisa ser vivida com medo.\n\n**Que Cascavel continue florescendo. E que as mulheres daqui floresçam junto, em todas as fases.**\n\nFeliz aniversário, Cascavel! Qual é o seu lugar preferido na cidade? Me conta aqui 👇\n\n#Cascavel75Anos #CascavelPR #Cascavel #SaúdeDaMulher #Ginecologia #DraAnaPaulaFaller"}, {"id": "p9", "dia": 16, "mes": 11, "dow": "Segunda", "fmt": "Feed", "hora": "11h30", "titulo": "Vaginose ou candidíase? Os sinais que ajudam a diferenciar", "legenda": "Corrimento diferente, desconforto... e a primeira reação de muita mulher é comprar uma pomada por conta própria. Mas nem toda infecção íntima é candidíase. 🌸\n\nAs duas são muito comuns e costumam ser confundidas:\n\n✔ Candidíase: causada por fungos. Coceira intensa, ardência, vermelhidão e corrimento branco, em grumos, geralmente sem cheiro.\n✔ Vaginose bacteriana: causada pelo desequilíbrio das bactérias da flora. Corrimento acinzentado, mais fino, com odor forte, que costuma piorar depois da relação ou da menstruação. Geralmente coça pouco.\n\nPor que isso importa? Porque o tratamento é diferente. Tratar uma pensando que é a outra pode prolongar os sintomas e favorecer as recorrências.\n\nMas atenção: outros quadros também podem causar sintomas parecidos. Só a avaliação confirma.\n\n**Automedicação íntima atrasa o tratamento certo.**\n\nSalve este post e compartilhe com uma amiga. 👇\n\n#SaúdeÍntima #Candidíase #Vaginose #Corrimento #SaúdeDaMulher #Ginecologia #DraAnaPaulaFaller"}, {"id": "p10", "dia": 17, "mes": 11, "dow": "Terça", "fmt": "Carrossel", "hora": "17h30", "titulo": "Parto prematuro: 6 sinais que toda gestante precisa conhecer", "legenda": "Hoje, 17 de novembro, é o Dia Mundial da Prematuridade. 💜\n\nNo Brasil, cerca de 1 em cada 10 bebês nasce antes de 37 semanas de gestação.\n\nNem todo parto prematuro pode ser evitado. Mas reconhecer os sinais cedo faz diferença, porque, em muitos casos, existe tempo para medidas que protegem o bebê.\n\nO pré-natal bem feito também é parte dessa proteção: é nele que avaliamos os fatores de risco e acompanhamos cada fase da gestação.\n\nMas lembre: algumas contrações leves e irregulares podem ser normais na gestação. Na dúvida, procure a sua obstetra ou o pronto atendimento. **Na gestação, é melhor ir e não ser nada do que esperar e se arrepender.**\n\nSalve e envie para uma gestante que você ama. 🤍\n\n#DiaMundialDaPrematuridade #Prematuridade #Gestação #PréNatal #Gestante #Obstetrícia #DraAnaPaulaFaller"}, {"id": "p11", "dia": 18, "mes": 11, "dow": "Quarta", "fmt": "Feed", "hora": "11h30", "titulo": "Tenho endometriose. Vou conseguir engravidar?", "legenda": "Essa é uma das perguntas mais delicadas que chegam ao consultório. 🤍\n\nA endometriose pode, sim, dificultar a gravidez em algumas mulheres: ela pode causar inflamação na pelve, alterar as trompas e os ovários e, em alguns casos, reduzir a reserva ovariana.\n\nMas ter endometriose não significa ser infértil. Muitas mulheres com a doença engravidam naturalmente. Outras precisam de tratamento, e existem caminhos diferentes para cada caso: acompanhamento, cirurgia em situações específicas ou técnicas de reprodução assistida.\n\nO que mais faz diferença é não demorar: a idade, a extensão da doença e a reserva ovariana entram nessa avaliação.\n\n**Diagnóstico não é sentença. É o começo de um plano.**\n\nSe você tem endometriose e pensa em engravidar, converse sobre isso na sua próxima consulta. Envie para quem precisa ler. 💛\n\n#Endometriose #Fertilidade #Tentantes #ReproduçãoHumana #SaúdeDaMulher #Ginecologia #DraAnaPaulaFaller"}, {"id": "p12", "dia": 19, "mes": 11, "dow": "Quinta", "fmt": "Carrossel", "hora": "17h30", "titulo": "Sangrou depois da menopausa? Isso sempre merece avaliação.", "legenda": "Depois de um ano inteiro sem menstruar, apareceu um sangramento, mesmo pequeno? Esse é um sinal que nunca deve ser ignorado. 🩸\n\nNa maioria das vezes, a causa é benigna: a mucosa fica mais fina com a queda hormonal, pode haver um pólipo ou o efeito de algum tratamento hormonal.\n\nMas o sangramento depois da menopausa também é o principal sinal de alterações no endométrio que precisam ser descartadas. E é por isso que ele sempre merece avaliação, sem esperar \"ver se volta\".\n\n**Na menopausa, sangramento não é menstruação voltando. É motivo de consulta.**\n\nSalve este carrossel e envie para uma mulher que precisa saber disso. 👇\n\n#Menopausa #PósMenopausa #Climatério #SaúdeDaMulher #Mulher50Mais #Ginecologia #DraAnaPaulaFaller"}, {"id": "p13", "dia": 24, "mes": 11, "dow": "Terça", "fmt": "Carrossel", "hora": "17h30", "titulo": "Dor na relação não é normal: 5 causas que têm tratamento", "legenda": "Muitas mulheres convivem com a dor na relação por anos, achando que é normal ou que precisam aguentar. Não precisam. 🤍\n\nA dor durante ou depois da relação tem nome (dispareunia) e tem causas que podem ser investigadas e tratadas. As mais comuns estão neste carrossel, e muitas vezes mais de uma aparece ao mesmo tempo.\n\nFalar sobre isso no consultório pode parecer difícil, mas é uma parte importante da sua saúde, e não um assunto proibido.\n\nMas atenção: o tratamento depende da causa. Por isso, a avaliação é individual e pode envolver a ginecologista, a fisioterapia pélvica e o apoio psicológico.\n\n**Prazer também faz parte da saúde da mulher.**\n\nSe este post pode ajudar alguém, compartilhe. E se quiser conversar sobre isso, agende a sua consulta.\n\n#SaúdeÍntima #SaúdeSexual #Dispareunia #Menopausa #SaúdeDaMulher #Ginecologia #DraAnaPaulaFaller"}, {"id": "p14", "dia": 25, "mes": 11, "dow": "Quarta", "fmt": "Feed", "hora": "11h30", "titulo": "Violência contra a mulher não tem idade.", "legenda": "Hoje, 25 de novembro, é o Dia Internacional pela Eliminação da Violência contra a Mulher.\n\nQuando se fala em violência, muita gente imagina uma mulher jovem. Mas ela também atinge mulheres maduras, muitas vezes há décadas, de um jeito silencioso: o controle do dinheiro, a humilhação diante dos filhos, o isolamento das amigas, a violência sexual dentro do casamento.\n\nE muitas dessas mulheres acham que \"agora não adianta mais\" ou que \"já passou da idade de recomeçar\". Adianta. Nunca é tarde para viver sem medo.\n\nSe você vive isso, ou conhece alguém que vive:\n📞 Ligue 180: Central de Atendimento à Mulher, gratuita, 24 horas, com sigilo.\n🚨 Em emergência, ligue 190.\n\n**Nenhuma idade justifica a violência. E nenhuma idade impede um recomeço.**\n\nCompartilhe. Este post pode chegar a quem precisa. 💜\n\n#FimDaViolênciaContraAMulher #Ligue180 #Mulher40Mais #SaúdeDaMulher #DraAnaPaulaFaller"}, {"id": "p15", "dia": 26, "mes": 11, "dow": "Quinta", "fmt": "Feed", "hora": "11h30", "titulo": "Esqueceu a palavra no meio da frase? Pode ser hormonal.", "legenda": "Entrar num cômodo e esquecer o que foi buscar. Perder a palavra no meio da conversa. Sentir a cabeça \"enevoada\". Se isso começou depois dos 40, você não está sozinha. 👀\n\nNa perimenopausa, a oscilação do estrogênio pode afetar a memória, a concentração e a clareza mental. Muitas mulheres descrevem como uma \"névoa\", e muitas têm medo de que seja algo mais grave.\n\nNa maioria das vezes, esses sintomas melhoram com o tempo e com o cuidado certo: sono de qualidade, atividade física, manejo do estresse e, quando indicado, tratamento.\n\nMas atenção: nem todo esquecimento é hormonal. Tireoide, deficiência de vitaminas, anemia, depressão e privação de sono também precisam ser avaliados.\n\n**Você não está ficando \"desligada\". Seu corpo está mudando, e isso pode ser cuidado.**\n\nJá aconteceu com você? Me conta aqui 👇\n\n#Perimenopausa #Menopausa #Climatério #Mulher40Mais #SaúdeHormonal #DraAnaPaulaFaller"}, {"id": "p16", "dia": 27, "mes": 11, "dow": "Sexta", "fmt": "Feed", "hora": "11h30", "titulo": "Eu na Black Friday × eu na hora de marcar o preventivo", "legenda": "Quem nunca? 😅\n\nA gente acha tempo para tudo: fila, promoção, carrinho cheio... mas a consulta de rotina fica sempre para o mês que vem.\n\nHoje é dia de rir um pouco, mas também de lembrar: **cuidar da saúde não entra em liquidação, e não dá para deixar para depois.**\n\nMarque aqui aquela amiga que precisa agendar o preventivo. 👇\n\n#BlackFriday #Preventivo #SaúdeDaMulher #HumorFeminino #Ginecologia #DraAnaPaulaFaller"}, {"id": "r1", "dia": 5, "mes": 11, "dow": "Quinta", "fmt": "Reels", "hora": "17h30", "titulo": "Por que eu sempre pergunto do seu sono na consulta?", "legenda": "Você já estranhou quando eu perguntei do seu sono na consulta? 😴\n\nSono e hormônios andam juntos: dormir mal mexe com o cortisol, o apetite, a libido e o ciclo. E, na transição para a menopausa, o caminho inverso também acontece.\n\n**Cansaço todos os dias merece investigação, não conformismo.**\n\nMe conta nos comentários: como anda o seu sono? 👇\n\n#Sono #SaúdeHormonal #Menopausa #SaúdeDaMulher #Ginecologia #DraAnaPaulaFaller"}, {"id": "r2", "dia": 11, "mes": 11, "dow": "Quarta", "fmt": "Reels", "hora": "17h30", "titulo": "Você sente mais fome antes de menstruar? Não é falta de força de vontade.", "legenda": "Fome de leão antes de menstruar? Você não está sozinha. 🍫\n\nNa segunda metade do ciclo, os hormônios mudam e o corpo pede mais energia. A queda do estrogênio antes da menstruação também mexe com o humor e com a vontade de doce.\n\nAlguns cuidados ajudam a atravessar esses dias com mais equilíbrio. Mas, se os sintomas atrapalham a sua rotina, isso merece avaliação.\n\n**Conhecer o seu ciclo é uma forma de cuidar de você.**\n\nVocê sente isso? Me conta aqui 👇\n\n#CicloMenstrual #TPM #SaúdeDaMulher #SaúdeHormonal #Ginecologia #DraAnaPaulaFaller"}, {"id": "r3", "dia": 18, "mes": 11, "dow": "Quarta", "fmt": "Reels", "hora": "17h30", "titulo": "Um dia comigo no consultório", "legenda": "Vem passar um dia comigo no consultório? 🤍\n\nCada consulta começa com uma conversa, porque cada mulher chega com uma história, uma fase e uma necessidade diferente.\n\n**Cuidado de verdade começa pela escuta.**\n\nSe quiser conhecer o consultório pessoalmente, é só agendar a sua avaliação.\n\n#Bastidores #RotinaMédica #Ginecologia #SaúdeDaMulher #CascavelPR #DraAnaPaulaFaller"}];   // [{id, dia, mes, dow, fmt, hora, titulo, legenda}]
+const ARTES = {"p1": ["img/140da325233ed9.jpg", "img/df58db8298fd2e.jpg", "img/968b0de6998bd6.jpg", "img/625f7b89c239f0.jpg", "img/08bc721bd13cf0.jpg", "img/3c6378621ac220.jpg", "img/e301276db02b5f.jpg", "img/af267a4ffd78b0.jpg"], "p10": ["img/e1fff65c8fbbf6.jpg", "img/a9ecee472532af.jpg", "img/815de3eaf1c668.jpg", "img/91baf78c79b921.jpg", "img/49a8343015a347.jpg", "img/c498ce89714be7.jpg", "img/48853f4256f3b5.jpg", "img/fd1b8a38aea024.jpg"], "p11": ["img/a6d39d89d4a775.jpg"], "p12": ["img/843e1de263e48c.jpg", "img/016d305d9960f3.jpg", "img/bfb4b6529710d0.jpg", "img/a786828fab4fdd.jpg", "img/f5ea91861a83b7.jpg", "img/31122f167556bc.jpg", "img/544be7d65c114d.jpg"], "p13": ["img/a24e24ff6175e4.jpg", "img/c4948d75da2a24.jpg", "img/6b8a946eca9222.jpg", "img/04064e020e40b9.jpg", "img/3ae0bdcdd95c00.jpg", "img/ca3a5214ef205a.jpg", "img/d17764d2978574.jpg"], "p14": ["img/195fd8d59a9cd7.jpg"], "p15": ["img/a2c69df1141734.jpg"], "p16": ["img/ce3151aa6f417c.jpg"], "p2": ["img/026bbe77bc961a.jpg", "img/0620f9e91b7644.jpg", "img/861fd25aeba736.jpg", "img/c064ab95c2a1a5.jpg", "img/8c12b5d031cef4.jpg", "img/e530e1606f0313.jpg"], "p3": ["img/54e72fda551d1d.jpg", "img/57e0f8ea7d04f5.jpg", "img/51b468adab2e28.jpg"], "p4": ["img/1c87911586ab64.jpg"], "p5": ["img/d9fab9022ed321.jpg", "img/af036eef8e4696.jpg", "img/2bf9c2d856f04b.jpg", "img/34230d761df32f.jpg", "img/16287ff35f062b.jpg", "img/9e855d1e546e24.jpg", "img/7d6c634527acdd.jpg"], "p6": ["img/172de9a555b401.jpg"], "p7": ["img/3427a05d009020.jpg", "img/f059b15e21f377.jpg", "img/b5414c9c86cba5.jpg", "img/a91387095c2b3c.jpg", "img/9317b08649d5f2.jpg", "img/52939f6e1a2024.jpg", "img/f755de0bb8f965.jpg", "img/355dc0c089e7ec.jpg", "img/2d3b6487a9766c.jpg"], "p8": ["img/654c1da543292e.jpg"], "p9": ["img/0b03f8874dfab7.jpg"]};   // {post_id: [dataURI...]}
+const ARTES_V = {"p1": "048cfad0c248", "p10": "9de153a84337", "p11": "983f5a50402e", "p12": "c7ab7324eaa9", "p13": "cc74923145d2", "p14": "671583312956", "p15": "f50cf2f5a0b9", "p16": "cc1f5fdc594d", "p2": "092421d5c231", "p3": "00fdcc6fa98b", "p4": "302361d45f38", "p5": "ed528ff6815b", "p6": "89226b7c758d", "p7": "5ae246b142ae", "p8": "2ae625841770", "p9": "c244a0c78edb"};
+const VIDEOS = [];
+const STORIES = new Set([]); // posts que a cliente escolheu para STORIES (arte 9:16 inteira, sem corte) // posts que a cliente escolheu fazer em VÍDEO: só aviso, sem botões e fora da contagem // versão (hash) de cada arte: resposta de versão antiga não vale
+const LABEL = {aprovado:"Aprovada", ajuste:"Ajuste pedido", recusado:"Recusada"};
+const FALA = window.SpeechRecognition || window.webkitSpeechRecognition || null;  // voz → texto do próprio aparelho
+const KEY = "artes:" + PLAN_ID;
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+let db = null, me = null;
+const pos = {};
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dd = p => String(p.dia).padStart(2,"0") + "/" + String(p.mes).padStart(2,"0");
+const items = () => POSTS.filter(p => ARTES[p.id] && ARTES[p.id].length).sort((a,b) => (a.mes*100+a.dia) - (b.mes*100+b.dia));
+function cur(id){ const s = state[id] || {}; return (s.v && ARTES_V[id] && s.v !== ARTES_V[id]) ? {} : s; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+function renderFeed(){
+  const list = items().filter(p => !STORIES.has(p.id)).slice().reverse().slice(0, 9);  // stories não entram no feed
+  const cells = list.map(p => `<a href="#a-${p.id}" aria-label="${esc(p.titulo)}"><img src="${ARTES[p.id][0]}" alt=""><span class="dot ${cur(p.id).status ? "s-"+cur(p.id).status : ""}"></span></a>`);
+  while (cells.length < 9) cells.push('<div class="ph">seu feed</div>');
+  document.getElementById("feed").innerHTML = cells.join("");
+}
+function card(p){
+  const imgs = ARTES[p.id], n = imgs.length, k = pos[p.id] || 0, s = cur(p.id), st = s.status || "";
+  return `<article class="post" id="a-${p.id}">
+    <div><div class="slider${STORIES.has(p.id) ? " story" : ""}"><div class="track" style="transform:translateX(-${k*100}%)">${imgs.map((u,i) => `<img src="${u}" alt="${esc(p.titulo)}, ${i+1} de ${n}" loading="lazy">`).join("")}</div>
+      ${n > 1 ? `<button class="nav pv" type="button" data-s="${p.id}" data-d="-1" aria-label="Anterior">‹</button><button class="nav nx" type="button" data-s="${p.id}" data-d="1" aria-label="Próximo">›</button><span class="cnt">${k+1}/${n}</span>` : ""}</div>
+      ${n > 1 ? `<div class="dots">${imgs.map((_,i) => `<i class="${i===k?"on":""}"></i>`).join("")}</div>` : ""}</div>
+    <div class="info">
+      <div class="when"><b>${dd(p)}</b><span>${esc(p.dow)} · ${esc(p.hora || "")}</span><span class="fmt">${STORIES.has(p.id) ? "Stories" : esc(p.fmt)}</span></div>
+      <h3>${esc(p.titulo)}</h3>
+      <span class="status ${st ? "s-"+st : ""}">${st ? LABEL[st] : "A revisar"}</span>
+      ${STORIES.has(p.id) ? "" : `<div class="legbox"><div class="leglbl">Legenda</div><div class="cap">${esc(p.legenda)}</div></div>`}
+      <div class="decide" role="group" aria-label="Sua resposta">
+        <button class="btn a" type="button" data-act="aprovado" data-id="${p.id}" aria-pressed="${st==="aprovado"}">Aprovar</button>
+        <button class="btn j" type="button" data-act="ajuste" data-id="${p.id}" aria-pressed="${st==="ajuste"}">Pedir ajuste</button>
+        <button class="btn r" type="button" data-act="recusado" data-id="${p.id}" aria-pressed="${st==="recusado"}">Recusar</button>
+        <div class="adjust" ${st==="ajuste" ? "" : "hidden"}>
+          <label for="n-${p.id}">O que você quer mudar nesta arte?</label>
+          ${FALA ? `<button class="mic" type="button" data-mic="${p.id}" aria-label="Segure e fale o ajuste; ao soltar vira texto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+            <span class="lbl">Segure e fale o ajuste</span></button>
+          <p class="mic-dica">Ao soltar, sua fala vira texto aqui embaixo. Confira e toque em Salvar ajuste.</p>`
+          : `<p class="mic-dica">Dica: toque no microfone do teclado para falar em vez de digitar.</p>`}
+          <textarea id="n-${p.id}">${esc(s.nota || "")}</textarea>
+          <div><button class="btn j" type="button" data-note="${p.id}" aria-pressed="true">Salvar ajuste</button> <span class="saved" id="sv-${p.id}"></span></div>
+        </div>
+      </div>
+    </div></article>`;
+}
+function renderList(){
+  const box = document.getElementById("list"), list = items();
+  const drafts = {}; box.querySelectorAll("textarea").forEach(t => drafts[t.id] = t.value);
+  const open = new Set([...box.querySelectorAll("details[open]")].map(d => d.closest(".post").id));
+  // vídeos PRIMEIRO, em destaque: a cliente precisa ver logo que esses viram vídeo (Fabio, 27/10)
+  box.innerHTML = (VIDEOS.length ? `<div class="vids"><h3>🎥 Estes você escolheu fazer em VÍDEO</h3>
+      <p class="vlead">Aqui não tem arte para aprovar: você grava, a gente edita e te manda o vídeo para aprovar depois. Logo abaixo estão as artes.</p>
+      ${VIDEOS.map(v => `<article class="vid" id="v-${v.id}">
+      <div class="when"><b>${esc(v.quando)}</b><span>${esc(v.fmt)}</span></div><h4>${esc(v.titulo)}</h4>
+      <p><span class="tag">${esc(v.tag)}</span>${esc(v.aviso)}</p></article>`).join("")}</div><h3 class="arts-h">🖼️ Artes para aprovar</h3>` : "")
+    + (list.length ? list.map(card).join("") : '<div class="empty">As artes aparecem aqui assim que ficarem prontas.</div>');
+  Object.entries(drafts).forEach(([k,v]) => { const t = document.getElementById(k); if (t && v) t.value = v; });
+  open.forEach(id => { const d = document.querySelector(`#${id} details`); if (d) d.open = true; });
+}
+function summary(){
+  const L = [`Aprovação das artes · ${MES} · ${CLIENTE}`];
+  const group = (st, title) => { const ps = items().filter(p => cur(p.id).status === st); if (!ps.length) return;
+    L.push("", title); ps.forEach(p => { L.push(`• ${dd(p)} ${p.titulo}`); if (st === "ajuste" && cur(p.id).nota) L.push(`   Ajuste: ${cur(p.id).nota}`); }); };
+  group("aprovado","✅ Aprovadas"); group("ajuste","✏️ Ajustes"); group("recusado","❌ Recusadas");
+  return L.join("\n");
+}
+function renderBar(){
+  const list = items(), n = list.length || 1, c = {aprovado:0, ajuste:0, recusado:0};
+  list.forEach(p => { const s = cur(p.id).status; if (s) c[s]++; });
+  // % , "Clique em Concluir" e o botão Concluir vêm do shim.js do site (iguais em todas as páginas)
+  document.getElementById("barText").textContent = `${c.aprovado + c.ajuste + c.recusado} de ${list.length} respondidas`;
+  document.getElementById("pa").style.width = (c.aprovado/n*100) + "%";
+  document.getElementById("pj").style.width = (c.ajuste/n*100) + "%";
+  document.getElementById("pr").style.width = (c.recusado/n*100) + "%";
+  const wa = document.getElementById("wa");   // sem login as respostas não chegam ao nosso banco: manda o resumo pelo WhatsApp
+  wa.hidden = !(c.aprovado + c.ajuste + c.recusado);
+  wa.href = "https://wa.me/?text=" + encodeURIComponent(summary());
+}
+function render(){ renderFeed(); renderList(); renderBar(); }
+
+async function decide(id, status, nota){
+  const next = {status, nota: status === "ajuste" ? (nota || "") : "", at: new Date().toISOString(), v: ARTES_V[id] || ""};
+  state = {...state, [id]: next}; save(); render();
+  const el = document.getElementById("sv-" + id);
+  if (!db) { if (el) el.textContent = "Salvo neste aparelho"; return; }
+  try { await db.collection("artes").doc(id).set({...next, by: me || null}); if (el) el.textContent = "Salvo"; }
+  catch (e) { if (el) el.textContent = "Salvo neste aparelho"; }
+}
+
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-act]");
+  if (a) { const id = a.dataset.id;
+    if (a.dataset.act === "ajuste") { state = {...state, [id]: {...cur(id), status:"ajuste", v: ARTES_V[id] || ""}}; save(); render(); const t = document.getElementById("n-"+id); if (t) t.focus(); return; }
+    decide(id, a.dataset.act); return; }
+  const n = e.target.closest("[data-note]");
+  if (n) { const id = n.dataset.note; decide(id, "ajuste", document.getElementById("n-"+id).value.trim()); return; }
+  const s = e.target.closest("[data-s]");
+  if (s) { const id = s.dataset.s, len = ARTES[id].length; pos[id] = ((pos[id] || 0) + Number(s.dataset.d) + len) % len; renderList(); }
+});
+
+// Ajuste por voz (Fabio, 11/11): segura, fala e ao soltar vira texto. Nenhum áudio é gravado nem enviado:
+// o próprio celular transcreve e só o texto entra na caixa. Toque rápido = liga, toque de novo = desliga.
+let fala = null;
+function pararFala(){ if (fala) { try { fala.rec.stop(); } catch (e) {} } }
+function iniciarFala(id, btn){
+  pararFala();
+  const rec = new FALA(); rec.lang = "pt-BR"; rec.continuous = true; rec.interimResults = true;
+  const caixa = () => document.getElementById("n-" + id);
+  const base = (caixa()?.value || "").trim();
+  let final = "";
+  const escrever = (parcial) => { const t = caixa(); if (t) t.value = [base, final, parcial].filter(Boolean).join(" ").replace(/\s+/g, " "); };
+  rec.onresult = ev => { let parcial = "";
+    for (let i = ev.resultIndex; i < ev.results.length; i++) { const r = ev.results[i];
+      if (r.isFinal) final = (final + " " + r[0].transcript).trim(); else parcial += r[0].transcript; }
+    escrever(parcial); };
+  const fim = () => { escrever(""); btn.classList.remove("on"); btn.querySelector(".lbl").textContent = "Segure e fale o ajuste"; if (fala && fala.rec === rec) fala = null; };
+  rec.onend = fim;
+  rec.onerror = ev => { fim(); if (ev.error === "not-allowed" || ev.error === "service-not-allowed")
+    alert("Para falar o ajuste, permita o uso do microfone. Ou toque no microfone do teclado."); };
+  fala = {rec, id, inicio: Date.now(), travado: false};
+  btn.classList.add("on"); btn.querySelector(".lbl").textContent = "Ouvindo… solte para terminar";
+  try { rec.start(); } catch (e) { fim(); }
+}
+document.addEventListener("pointerdown", e => { const b = e.target.closest("[data-mic]"); if (!b) return; e.preventDefault();
+  if (fala && fala.travado && fala.id === b.dataset.mic) { pararFala(); return; }
+  iniciarFala(b.dataset.mic, b); });
+["pointerup","pointercancel","pointerleave"].forEach(tipo => document.addEventListener(tipo, e => {
+  if (!fala || !e.target.closest || !e.target.closest("[data-mic]")) return;
+  if (tipo === "pointerup" && Date.now() - fala.inicio < 350) { fala.travado = true; return; }  // toque rápido: segue ouvindo
+  if (!fala.travado) pararFala(); }));
+document.addEventListener("contextmenu", e => { if (e.target.closest("[data-mic]")) e.preventDefault(); });
+
+render();
+(async () => {
+  try {
+    if (!window.claude || !window.claude.use) return;
+    const user = await window.claude.use("user");
+    if (user) { try { me = await user.id(); } catch (e) {} }
+    db = await window.claude.use("db");
+    renderBar();
+    if (!db) return;
+    db.collection("artes").onSnapshot(snap => {
+      let changed = false; const next = {...state};
+      snap.docs.forEach(d => { const v = d.data(); if (v && v.status) { next[d.id] = {status:v.status, nota:v.nota || "", at:v.at || "", v:v.v || ""}; changed = true; } });
+      if (changed) { state = next; save(); render(); }
+    });
+  } catch (e) {}
+})();
+</script>
