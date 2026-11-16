@@ -160,7 +160,7 @@ const pos = {};
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const dd = p => String(p.dia).padStart(2,"0") + "/" + String(p.mes).padStart(2,"0");
-const items = () => POSTS.filter(p => ARTES[p.id] && ARTES[p.id].length).sort((a,b) => (a.mes*100+a.dia) - (b.mes*100+b.dia));
+const items = () => POSTS.filter(p => ARTES[p.id] && ARTES[p.id].length).sort((a,b) => POSTS.indexOf(a) - POSTS.indexOf(b));
 function cur(id){ const s = state[id] || {}; return (s.v && ARTES_V[id] && s.v !== ARTES_V[id]) ? {} : s; }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
 
